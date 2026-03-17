@@ -1,0 +1,31 @@
+# Benchmark output logs (generated at runtime)
+logs/**/*.csv
+logs/**/*.json
+
+# Keep the directory structure
+!logs/**/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# Environment
+.env
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# HuggingFace cache (if downloaded locally)
+*.bin
+*.safetensors
+*.gguf

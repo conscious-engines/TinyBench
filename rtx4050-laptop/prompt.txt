@@ -1,0 +1,23 @@
+<|im_start|>user
+Write an in-depth, structured, and self-contained essay explaining the concept of consciousness from multiple perspectives.
+
+    Begin by clearly defining consciousness and why it is a difficult concept to study. Then explore the topic from the following viewpoints, dedicating multiple detailed paragraphs to each:
+
+    1. Philosophical perspectives, including classical and modern views, major debates, and unresolved questions.
+    2. Neuroscientific perspectives, covering brain structures, neural correlates, current theories, and experimental approaches.
+    3. Cognitive science and psychology perspectives, including perception, attention, self-awareness, and consciousness disorders.
+    4. Artificial intelligence and machine consciousness, discussing whether machines can be conscious, functional vs phenomenal consciousness, and current limitations of AI systems.
+    5. Ethical and societal implications of understanding or engineering consciousness.
+
+    Throughout the essay:
+    - Use clear section headings
+    - Explain all technical terms in plain language
+    - Provide illustrative examples where helpful
+    - Compare and contrast different viewpoints
+    - Avoid bullet lists unless they are necessary for clarity
+
+    Conclude with a reflective summary that discusses what remains unknown about consciousness and what future research directions may look like.
+
+    The response should be detailed, continuous, and written in a neutral, academic tone
+<|im_end|>
+<|im_start|>assistant
