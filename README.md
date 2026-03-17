@@ -8,7 +8,7 @@ A cumulative collection of LLM inference benchmarking suites targeting edge and 
 
 ```
 edge-benchmarking/
-├── rtx4050-laptop/  # Laptop/desktop NVIDIA GPU — multiple inference backends
+├── rtx4050-laptop/ #Laptop/desktop 4050 — multiple inference backends
 ├── rpi5-hailo/      # Raspberry Pi 5 + Hailo AI accelerator
 └── mlc-llm/         # On-device benchmarking via MLC-LLM (Android + iOS)
 ```
@@ -53,30 +53,7 @@ See [`mlc-llm/README.md`](mlc-llm/README.md) for the full build and deployment g
 
 ---
 
-### 3. `mlc-llm/ios/` — iPhone (iOS)
-
-MLC-LLM iOS app configurations targeting iPhone. Two Xcode projects are included:
-
-| Project | Description |
-|---|---|
-| `MLCChat/` | Full chat UI app with model download and management |
-| `MLCEngineExample/` | Minimal MLCSwift API example |
-
-**Configured models (MLCChat):**
-
-| Model | Quantization | Est. VRAM |
-|---|---|---|
-| Llama 3.2 3B Instruct | q4f16_1 | ~3 GB |
-| Gemma 2 2B IT | q4f16_1 | ~3 GB |
-| Phi 3.5 Mini Instruct | q4f16_1 | ~3 GB |
-| Qwen3 0.6B | q0f16 | ~3 GB |
-| Qwen3 1.7B | q4f16_1 | ~3 GB |
-
-**Build:** Run `mlc_llm package` then open the `.xcodeproj` in Xcode. See the [MLC-LLM iOS documentation](https://llm.mlc.ai/docs/deploy/ios.html) for full instructions.
-
----
-
-### 4. `rpi5-hailo/` — Raspberry Pi 5 + Hailo AI Accelerator
+### 3. `rpi5-hailo/` — Raspberry Pi 5 + Hailo AI Accelerator
 
 Benchmarks **Qwen 2.5 1.5B Instruct** on a **Raspberry Pi 5** with a Hailo AI accelerator. Covers the Hailo inference backend (streaming and non-streaming) and a CPU-baseline cold-start via Ollama. Platform metrics are read from `vcgencmd` (temperature, CPU frequency, input voltage, core voltage, throttle status).
 
