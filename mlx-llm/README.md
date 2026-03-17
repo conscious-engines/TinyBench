@@ -25,7 +25,7 @@ mlx-llm/
 - **macOS:** Apple Silicon Mac (M1 or later)
 - **iOS:** iPhone / iPad with Apple Neural Engine (A14+ / M1+)
 
-The app uses the MLX backend which runs on Apple's GPU and Neural Engine — no external accelerator required.
+The app uses the MLX backend which runs on Apple's GPU and CPU.
 
 ---
 
