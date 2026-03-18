@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+}
+
+android {
+    namespace 'ai.mlc.mlcllm'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 26   // IMPORTANT for Vulkan/OpenCL + TVM
+        targetSdk 34
+    }
+
+    publishing {
+        singleVariant("debug") {
+            withSourcesJar()
+        }
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main {
+            // JNI shared libraries (.so)
+            jniLibs.srcDirs = ['output/jniLibs']
+        }
+    }
+}
+
+dependencies {
+    implementation files("libs/tvm4j-core-0.0.1-SNAPSHOT.jar")
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3'
+}
+
