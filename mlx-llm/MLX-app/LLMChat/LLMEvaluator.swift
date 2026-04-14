@@ -159,7 +159,7 @@ final class LLMEvaluator {
                     ) { tokens in
                         let partial = context.tokenizer.decode(tokens: tokens)
                         Task { @MainActor in self.output = "Run \(i)/\(iterations):\n\(partial)" }
-                        return tokens.count >= 1000 ? .stop : .more
+                        return .more
                     }
                 }
                 
