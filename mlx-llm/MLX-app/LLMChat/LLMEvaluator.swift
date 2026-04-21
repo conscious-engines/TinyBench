@@ -39,7 +39,7 @@ final class LLMEvaluator {
     private let modelConfig = LLMRegistry.qwen2_5_1_5b
 
     /// Sampling parameters used for generation.
-    private let parameters = GenerateParameters(temperature: 0.0)
+    private let parameters = GenerateParameters(maxKVSize: 2048, temperature: 0.0)
 
     /// The loaded model container, or `nil` if the model hasn't been loaded yet.
     private var modelContainer: ModelContainer? = nil
