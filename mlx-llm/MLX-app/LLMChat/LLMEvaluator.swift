@@ -136,7 +136,7 @@ final class LLMEvaluator {
     ///   - prompt: The user's input text (same prompt is reused each iteration).
     ///   - systemPrompt: The system message providing context to the model.
     ///   - iterations: Number of generation runs to perform (default: 25).
-    func benchmark(prompt: String, systemPrompt: String = "You are a helpful assistant.", iterations: Int = 25) async {
+    func benchmark(prompt: String, systemPrompt: String = "You are a helpful assistant.", iterations: Int = 20) async {
         guard isLoaded, !running else { return }
         running = true
 
