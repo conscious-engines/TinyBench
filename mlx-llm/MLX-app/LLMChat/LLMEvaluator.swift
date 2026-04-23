@@ -39,7 +39,7 @@ final class LLMEvaluator {
     private let modelConfig = LLMRegistry.qwen2_5_1_5b
 
     /// Sampling parameters used for generation.
-    private let parameters = GenerateParameters(temperature: 0.7)
+    private let parameters = GenerateParameters(maxKVSize: 2048, temperature: 0.0)
 
     /// The loaded model container, or `nil` if the model hasn't been loaded yet.
     private var modelContainer: ModelContainer? = nil
@@ -107,7 +107,7 @@ final class LLMEvaluator {
                 ) { tokens in
                     let partial = context.tokenizer.decode(tokens: tokens)
                     Task { @MainActor in self.output = partial }
-                    return tokens.count >= 1000 ? .stop : .more
+                    return .more
                 }
             }
             
@@ -136,7 +136,7 @@ final class LLMEvaluator {
     ///   - prompt: The user's input text (same prompt is reused each iteration).
     ///   - systemPrompt: The system message providing context to the model.
     ///   - iterations: Number of generation runs to perform (default: 25).
-    func benchmark(prompt: String, systemPrompt: String = "You are a helpful assistant.", iterations: Int = 25) async {
+    func benchmark(prompt: String, systemPrompt: String = "You are a helpful assistant.", iterations: Int = 20) async {
         guard isLoaded, !running else { return }
         running = true
 
@@ -159,7 +159,7 @@ final class LLMEvaluator {
                     ) { tokens in
                         let partial = context.tokenizer.decode(tokens: tokens)
                         Task { @MainActor in self.output = "Run \(i)/\(iterations):\n\(partial)" }
-                        return tokens.count >= 1000 ? .stop : .more
+                        return .more
                     }
                 }
                 
